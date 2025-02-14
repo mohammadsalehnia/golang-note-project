@@ -31,7 +31,7 @@ func (n *Note) ClearNoteData() {
 	n.Content = ""
 }
 
-func (n *Note) SaveNoteInFile() error {
+func (n *Note) Save() error {
 	filename := strings.ReplaceAll(n.Title, " ", "_")
 	filename = strings.ToLower(filename) + ".json"
 
