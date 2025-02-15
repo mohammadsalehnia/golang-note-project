@@ -14,7 +14,7 @@ func New(text string) Todo {
 	return Todo{text}
 }
 
-func (t *Todo) PrintTodoData() {
+func (t *Todo) Display() {
 	fmt.Print("----------------- Todo data --------------- \n ")
 	fmt.Printf("Text: %s\n", t.Text)
 	fmt.Printf("------------------------------------------- \n")

@@ -13,30 +13,30 @@ type saver interface {
 	Save() error
 }
 
+type outputtable interface {
+	saver
+	Display()
+}
+
 func main() {
 
-	fmt.Println("Simple Golang n project")
+	fmt.Println("Simple Golang Note project")
+
 	title, content := getNoteData()
 	userNote := note.New(title, content)
-	userNote.PrintNoteData()
-
-	err := saveData(&userNote)
-
-	if err != nil {
-		fmt.Println(err)
-	}
+	outputData(&userNote)
 
 	todoText := getTodoData()
 	userTodo := todo.New(todoText)
-	userTodo.PrintTodoData()
-	err = saveData(&userTodo)
+	outputData(&userTodo)
+}
 
+func outputData(data outputtable) {
+	data.Display()
+	err := saveData(data)
 	if err != nil {
 		fmt.Println(err)
 	}
-
-	//n.ClearNoteData()
-	//n.PrintNoteData()
 }
 
 func saveData(data saver) error {

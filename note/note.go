@@ -18,7 +18,7 @@ func New(title string, content string) Note {
 	return Note{title, content, time.Now()}
 }
 
-func (n *Note) PrintNoteData() {
+func (n *Note) Display() {
 	fmt.Print("----------------- Note data --------------- \n ")
 	fmt.Printf("Title: %s\n", n.Title)
 	fmt.Printf("Content: %s\n", n.Content)
