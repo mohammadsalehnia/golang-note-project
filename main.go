@@ -70,3 +70,7 @@ func getUserInput(prompt string) string {
 	text, _ := reader.ReadString('\n')
 	return strings.TrimSpace(text)
 }
+
+func add[T int | float64](a T, b T) T {
+	return a + b
+}
