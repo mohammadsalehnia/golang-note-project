@@ -18,9 +18,13 @@ type outputtable interface {
 	Display()
 }
 
+func printSomething(value interface{}) {
+	fmt.Println(value)
+}
+
 func main() {
 
-	fmt.Println("Simple Golang Note project")
+	printSomething("Simple Golang Note project")
 
 	title, content := getNoteData()
 	userNote := note.New(title, content)
